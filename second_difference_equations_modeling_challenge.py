@@ -87,7 +87,10 @@ plt.show()
 
 
 # Encontrando los valores característicos
-# Falta definir el código
+A = np.array([[-0.01 - 0.05, 0.05], [0.05, -0.2 - 0.05]])
+characteristic_values = np.linalg.eigvals(A)
+print("Characteristic Values:", characteristic_values)
+
 
 # Encontrando los puntos de equilibrio
 # Falta definir el código
