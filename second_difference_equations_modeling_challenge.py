@@ -90,9 +90,21 @@ plt.show()
 # Encontrando los valores característicos
 # Falta definir el código
 
-# Encontrando los puntos de equilibrio
-# Falta definir el código
 
+# Encontrando los puntos de equilibrio
+def find_equilibrium_points(T_m_values, T_o_values, threshold):
+    equilibrium_points = []
+    for T_m, T_o in zip(T_m_values, T_o_values):
+        if abs(T_m - T_o) < threshold:
+            equilibrium_points.append((T_m, T_o))
+    return equilibrium_points
+
+equilibrium_threshold = 0.01
+equilibrium_points = find_equilibrium_points(ValuesT_m, ValuesT_o, equilibrium_threshold)
+print("Equilibrium Points for Worst Case k=0.1:", equilibrium_points[-1])
+
+equilibrium_points_W = find_equilibrium_points(ValuesT_mW, ValuesT_oW, equilibrium_threshold)
+print("Equilibrium Points for Best Case k=0.001:", equilibrium_points_W[-1])
 """- Code justification:
 
 - Code documentation: Its included over the code with comments
